@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Samarth Agrawal — Programmer Analyst & Jr. Software Developer</title>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:auto}body{margin:0;background:#05060a;color:#f4f7ff;font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.12;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:60px 60px;mask-image:linear-gradient(to bottom,black,transparent 80%);z-index:-1}
+nav{position:fixed;z-index:50;top:20px;left:50%;transform:translateX(-50%);display:flex;gap:8px;align-items:center;padding:8px 10px;border:1px solid #ffffff18;border-radius:999px;background:#080a10b8;backdrop-filter:blur(18px);box-shadow:0 10px 50px #0008}
+nav b{padding:9px 13px;font-size:13px;letter-spacing:.04em}nav a{color:#aeb8ca;text-decoration:none;padding:9px 13px;font-size:12px;border-radius:999px}nav a:hover{background:#ffffff0d;color:white}
+#cursor{position:fixed;width:16px;height:16px;border:1px solid #9bdcff;border-radius:50%;pointer-events:none;z-index:100;mix-blend-mode:screen;transform:translate(-50%,-50%);transition:width .2s,height .2s,background .2s}
+.hero{height:420vh;position:relative}.heroPin{height:100vh;position:sticky;top:0;overflow:hidden;display:grid;place-items:center}
+.heroCopy{position:absolute;z-index:5;text-align:center;pointer-events:none}.eyebrow{font-size:11px;letter-spacing:.35em;color:#7ddcff;margin-bottom:20px}.hero h1{font-size:clamp(48px,8.5vw,132px);line-height:.82;letter-spacing:-.075em;margin:0;font-weight:800}.hero p{max-width:600px;margin:30px auto 0;color:#aeb8ca;font-size:17px;line-height:1.7}
+.scene{position:absolute;width:min(700px,78vw);height:min(700px,78vw);perspective:1200px;transform-style:preserve-3d;left:50%;top:50%;transform:translate(-50%,-45%);z-index:2}.core{position:absolute;width:100px;height:100px;border-radius:50%;left:50%;top:50%;transform:translate(-50%,-50%);background:radial-gradient(circle at 35% 30%,#dff9ff,#48cfff 25%,#573cff 58%,#17122f 72%);box-shadow:0 0 70px #46d9ff99,0 0 150px #623cff55}.ring{position:absolute;inset:20%;border:1px solid #64dfff55;border-radius:50%;box-shadow:0 0 50px #38cfff22 inset}.layer{position:absolute;left:50%;top:50%;width:220px;height:92px;margin:-46px -110px;border:1px solid #8be8ff44;background:#0c1620c9;backdrop-filter:blur(8px);display:grid;place-items:center;font-size:12px;letter-spacing:.2em;text-transform:uppercase;box-shadow:0 0 30px #2bd8ff18;transform-style:preserve-3d}.front{transform:translate3d(-240px,-180px,180px)}.api{transform:translate3d(180px,-100px,80px)}.back{transform:translate3d(-190px,120px,-60px)}.db{transform:translate3d(160px,190px,-220px)}.line{position:absolute;left:50%;top:50%;height:2px;background:linear-gradient(90deg,transparent,#68e5ff,transparent);transform-origin:left center;width:300px;opacity:.5}
+.l1{transform:rotate(-145deg)}.l2{transform:rotate(-35deg)}.l3{transform:rotate(145deg)}.l4{transform:rotate(35deg)}
+.scrollHint{position:absolute;bottom:35px;left:50%;transform:translateX(-50%);font-size:10px;letter-spacing:.3em;color:#77849b}.progress{position:fixed;right:18px;top:50%;height:130px;width:2px;background:#ffffff18;z-index:20}.progress i{display:block;width:100%;height:0;background:#76e6ff}
+.section{min-height:100vh;position:relative;padding:13vw 8vw;display:flex;align-items:center}.section h2{font-size:clamp(52px,9vw,130px);line-height:.82;letter-spacing:-.07em;margin:0}.muted{color:#7d889b}.about{overflow:hidden}.aboutGrid{max-width:1200px;margin:auto;width:100%;display:grid;grid-template-columns:1.3fr .7fr;gap:8vw}.aboutText{font-size:18px;line-height:1.8;color:#aeb8ca;max-width:620px}.metrics{display:grid;gap:14px}.metric{border:1px solid #ffffff14;padding:22px;background:#ffffff04}.metric strong{font-size:34px;display:block}.metric span{font-size:11px;color:#77849b;letter-spacing:.15em;text-transform:uppercase}
+.timeline{width:100%;overflow:hidden}.track{display:flex;width:max-content;gap:90px;padding:100px 8vw}.job{width:430px;border-left:1px solid #6be4ff55;padding-left:28px}.job small{color:#6be4ff;letter-spacing:.2em}.job h3{font-size:34px;margin:15px 0 8px}.job p{color:#8995a9;line-height:1.7}
+.skills{display:block}.skills h2{text-align:center}.skillOrbit{position:relative;width:min(760px,92vw);height:570px;margin:30px auto 0;transform-style:preserve-3d}
+.skillCore{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:145px;height:145px;border-radius:50%;display:grid;place-items:center;text-align:center;font-size:13px;letter-spacing:.16em;font-weight:800;border:1px solid #72e7ff66;background:radial-gradient(circle,#142536,#090d15 68%);box-shadow:0 0 60px #42ddff22,0 0 100px #684dff18;z-index:4}
+.skillCore span{font-size:10px;color:#73e6ff;letter-spacing:.28em}
+.skillLine{position:absolute;left:50%;top:50%;width:250px;height:1px;transform-origin:left center;background:linear-gradient(90deg,#65e4ff66,transparent);z-index:1}
+.sl1{transform:rotate(0deg)}.sl2{transform:rotate(45deg)}.sl3{transform:rotate(90deg)}.sl4{transform:rotate(135deg)}.sl5{transform:rotate(180deg)}.sl6{transform:rotate(225deg)}.sl7{transform:rotate(270deg)}.sl8{transform:rotate(315deg)}
+.nodes{position:relative}
+.node{z-index:3;position:absolute;padding:12px 17px;white-space:nowrap;min-width:94px;text-align:center;border:1px solid #ffffff1c;background:#0a0d14e8;backdrop-filter:blur(12px);border-radius:999px;font-size:12px;transition:.25s;box-shadow:0 8px 30px #0006}
+.n1{left:50%;top:4%;transform:translateX(-50%)}.n2{right:17%;top:16%}.n3{right:2%;top:47%}.n4{right:17%;bottom:13%}.n5{left:50%;bottom:3%;transform:translateX(-50%)}.n6{left:17%;bottom:13%}.n7{left:2%;top:47%}.n8{left:17%;top:16%}.n9{left:31%;top:17%}.n10{right:31%;bottom:17%}
+.projects{display:block}.projects h2{text-align:center;margin-bottom:70px}.project{min-height:90vh;display:grid;place-items:center;perspective:1200px}.projectCard{width:min(1050px,88vw);min-height:520px;border:1px solid #ffffff16;background:linear-gradient(135deg,#10131c,#080a10);position:relative;overflow:hidden;padding:55px;transform-style:preserve-3d}.projectCard:after{content:"";position:absolute;width:420px;height:420px;right:-100px;top:-100px;border-radius:50%;background:#48dfff22;filter:blur(20px)}.projectNum{font-size:11px;letter-spacing:.3em;color:#68e3ff}.projectCard h3{font-size:clamp(45px,6vw,90px);line-height:.9;max-width:700px;letter-spacing:-.06em;margin:40px 0}.tags{display:flex;gap:8px;flex-wrap:wrap}.tag{padding:8px 11px;border:1px solid #ffffff18;border-radius:999px;color:#9aa6ba;font-size:11px}
+.words{display:grid;place-items:center;overflow:hidden}.words h2{font-size:clamp(70px,15vw,220px);text-align:center}.contact{text-align:center;display:block;padding-top:18vh}.contact p{color:#8995a9}.buttons{display:flex;justify-content:center;gap:12px;margin-top:40px}.btn{padding:14px 22px;border:1px solid #ffffff1d;border-radius:999px;color:white;text-decoration:none;background:#ffffff06}.btn:hover{background:#ffffff10;border-color:#70e3ff66}.projectLink{position:absolute;left:55px;bottom:45px;font-size:11px;letter-spacing:.08em}.projectCard{padding-bottom:95px}
+@media(max-width:700px){nav a{display:none}.hero{height:320vh}.layer{width:150px;height:64px;margin:-32px -75px;font-size:9px}.front{transform:translate3d(-120px,-120px,100px)}.api{transform:translate3d(100px,-70px,60px)}.back{transform:translate3d(-100px,90px,-40px)}.db{transform:translate3d(90px,130px,-120px)}.aboutGrid{grid-template-columns:1fr}.section{padding:24vw 7vw}.track{gap:30px}.job{width:300px}.projectCard{padding:30px;min-height:430px}.projectLink{left:30px;bottom:28px}.projectCard h3{font-size:45px}.skillOrbit{height:500px}.skillCore{width:115px;height:115px;font-size:10px}.skillLine{width:180px}.node{font-size:10px;padding:10px 12px;min-width:82px}.node{font-size:10px;padding:10px 12px}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.hero{height:100vh}.scene{transform:translate(-50%,-45%)!important}.layer{transform:none!important}.scrollHint{display:none}}
+</style>
+</head>
+<body>
+<div id="cursor"></div>
+<nav><b>SA.</b><a href="#about">About</a><a href="#experience">Experience</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#contact">Contact</a></nav>
+<div class="progress"><i></i></div>
+
+<section class="hero">
+ <div class="heroPin">
+  <div class="heroCopy"><div class="eyebrow">PROGRAMMER ANALYST · JAVA · INSURANCE</div><h1>SAMARTH<br>AGRAWAL</h1><p>Jr. Software Developer at Cognizant, building and supporting Java-based enterprise systems for an insurance client.</p></div>
+  <div class="scene" id="scene">
+   <div class="ring"></div><div class="ring" style="inset:29%;border-color:#a16cff33"></div>
+   <div class="line l1"></div><div class="line l2"></div><div class="line l3"></div><div class="line l4"></div>
+   <div class="layer front">Frontend</div><div class="layer api">API Layer</div><div class="layer back">Backend</div><div class="layer db">Database</div><div class="core"></div>
+  </div>
+  <div class="scrollHint">SCROLL TO ENTER THE SYSTEM ↓</div>
+ </div>
+</section>
+
+<section class="section about" id="about"><div class="aboutGrid"><div><div class="eyebrow">01 / ABOUT</div><h2>I BUILD<br><span class="muted">SYSTEMS.</span></h2><p class="aboutText">I’m a Programmer Analyst at Cognizant, currently working as a Jr. Software Developer on an insurance client. My day-to-day work focuses on Java, Oracle SQL and application logging, with hands-on production issue resolution, recurring defect analysis and root-cause investigation. I also bring full-stack experience with React, Spring Boot and REST APIs.</p></div><div class="metrics"><div class="metric"><strong>JAVA</strong><span>Backend Development</span></div><div class="metric"><strong>SQL</strong><span>Oracle & Data</span></div><div class="metric"><strong>INSURANCE</strong><span>Enterprise Domain</span></div></div></div></section>
+
+<section class="section timeline" id="experience"><div style="width:100%"><div class="eyebrow">02 / EXPERIENCE</div><h2>THE<br><span class="muted">JOURNEY.</span></h2><div class="track" id="track"><div class="job"><small>MAR 2025 — JUN 2025</small><h3>React Developer Intern</h3><p>Pepcus Software · Built and maintained React interfaces, worked with component-based architecture and consumed APIs.</p></div><div class="job"><small>JUN 2025 — PRESENT</small><h3>Programmer Analyst</h3><p>Cognizant · Working as a Jr. Software Developer for an insurance client, contributing to enterprise application support and development.</p></div><div class="job"><small>CURRENT FOCUS</small><h3>Java · Oracle SQL</h3><p>Working with Java, Oracle SQL and application loggers while resolving production issues, recurring defects and performing root-cause analysis.</p></div><div class="job"><small>ENGINEERING</small><h3>Full-Stack Foundation</h3><p>Java, Spring Boot, REST APIs, React and database integration from full-stack training and personal projects.</p></div></div></div></section>
+
+<section class="section skills" id="skills"><div style="width:100%"><div class="eyebrow">03 / TECHNOLOGY</div><h2>THE<br><span class="muted">STACK.</span></h2><div style="text-align:center;color:#77849b;font-size:11px;letter-spacing:.18em;margin-bottom:10px">HOVER A TECHNOLOGY · FOLLOW THE CONNECTIONS</div><div class="skillOrbit"><div class="skillCore">ENGINEER<br><span>STACK</span></div><div class="skillLine sl1"></div><div class="skillLine sl2"></div><div class="skillLine sl3"></div><div class="skillLine sl4"></div><div class="skillLine sl5"></div><div class="skillLine sl6"></div><div class="skillLine sl7"></div><div class="skillLine sl8"></div><div class="node n1">React</div><div class="node n2">Java</div><div class="node n3">TypeScript</div><div class="node n4">Spring Boot</div><div class="node n5">Insurance</div><div class="node n6">REST APIs</div><div class="node n7">SQL</div><div class="node n8">Docker</div><div class="node n9">Git</div><div class="node n10">JavaScript</div></div></div></section>
+
+<section class="section projects" id="projects"><div style="width:100%"><div class="eyebrow">04 / SELECTED WORK</div><h2>THINGS<br><span class="muted">I BUILD.</span></h2>
+<div class="project"><div class="projectCard tilt"><span class="projectNum">PROJECT 01</span><h3>Real Estate<br>Property Platform</h3><div class="tags"><span class="tag">Java</span><span class="tag">Spring Boot</span><span class="tag">Spring Security</span><span class="tag">JWT</span><span class="tag">React</span></div></div></div>
+<div class="project"><div class="projectCard tilt"><span class="projectNum">PROJECT 02</span><h3>Personal<br>Finance Tracker</h3><div class="tags"><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Express</span><span class="tag">MongoDB</span></div></div></div>
+<div class="project"><div class="projectCard tilt"><span class="projectNum">PROJECT 03</span><h3>Real-Time<br>Workspace</h3><div class="tags"><span class="tag">Next.js</span><span class="tag">Convex</span><span class="tag">Tailwind</span><span class="tag">NextAuth</span></div></div></div>
+</div></section>
+
+<section class="section words"><div><div class="word">BUILD</div><div class="word muted">SCALE</div><div class="word">OPTIMIZE</div><div class="word muted">ITERATE</div></div></section>
+
+<section class="section contact" id="contact"><div class="eyebrow">05 / CONTACT</div><h2>LET'S BUILD<br><span class="muted">SOMETHING.</span></h2><p>Java · Full Stack · Enterprise Systems · Interactive Web</p><div class="buttons"><a class="btn" href="https://github.com/Samarth-agr/" target="_blank" rel="noopener">GitHub ↗</a><a class="btn" href="https://linkedin.com/in/samarth-agr" target="_blank" rel="noopener">LinkedIn ↗</a><a class="btn" href="mailto:samarthagrawal180@gmail.com">Email ↗</a></div></section>
+
+<script>
+gsap.registerPlugin(ScrollTrigger);
+const scene=document.querySelector('#scene'), copy=document.querySelector('.heroCopy'), core=document.querySelector('.core'), layers=[...document.querySelectorAll('.layer')];
+const heroTl=gsap.timeline({scrollTrigger:{trigger:'.hero',start:'top top',end:'bottom bottom',scrub:1.2}});
+heroTl.to(copy,{z:-600,opacity:.05,scale:.7,ease:'none'},0)
+ .to(scene,{scale:1.35,rotateX:18,rotateY:20,ease:'none'},0)
+ .to('.front',{x:-320,y:-210,z:330,rotationY:-20,ease:'none'},.15)
+ .to('.api',{x:270,y:-120,z:170,rotationY:18,ease:'none'},.22)
+ .to('.back',{x:-260,y:190,z:-100,rotationY:-15,ease:'none'},.29)
+ .to('.db',{x:240,y:250,z:-320,rotationY:25,ease:'none'},.36)
+ .to(core,{scale:1.6,boxShadow:'0 0 100px #46d9ffff,0 0 220px #623cffaa',ease:'none'},.45)
+ .to(layers,{x:0,y:0,z:0,rotationY:0,rotationX:0,ease:'none'},.72)
+ .to(scene,{scale:2.1,rotateX:-8,rotateY:-25,ease:'none'},.82)
+ .to(core,{scale:.25,opacity:0,ease:'none'},.93);
+
+gsap.to('.progress i',{height:'100%',scrollTrigger:{trigger:document.body,start:'top top',end:'bottom bottom',scrub:true}});
+gsap.to('#track',{x:()=>-(document.querySelector('#track').scrollWidth-window.innerWidth+120),ease:'none',scrollTrigger:{trigger:'#experience',start:'top top',end:'+=1600',pin:true,scrub:1,invalidateOnRefresh:true}});
+gsap.utils.toArray('.word').forEach((w,i)=>gsap.fromTo(w,{x:i%2?-120:120,opacity:.15,scale:.75},{x:0,opacity:1,scale:1,scrollTrigger:{trigger:w,start:'top 85%',end:'top 35%',scrub:1}}));
+const skillNodes=gsap.utils.toArray('.skillOrbit .node');
+skillNodes.forEach((n,i)=>{
+  n.addEventListener('mouseenter',()=>{
+    gsap.to(n,{scale:1.13,duration:.22,ease:'power2.out'});
+    gsap.to('.skillCore',{scale:1.04,boxShadow:'0 0 85px #42ddff55,0 0 120px #684dff33',duration:.3});
+  });
+  n.addEventListener('mouseleave',()=>{
+    gsap.to(n,{scale:1,duration:.25,ease:'power2.out'});
+    gsap.to('.skillCore',{scale:1,boxShadow:'0 0 60px #42ddff22,0 0 100px #684dff18',duration:.3});
+  });
+});
+gsap.utils.toArray('.projectCard').forEach(card=>gsap.fromTo(card,{rotateX:12,y:100,opacity:.4},{rotateX:0,y:0,opacity:1,scrollTrigger:{trigger:card,start:'top 85%',end:'top 45%',scrub:1}}));
+
+const cursor=document.querySelector('#cursor'); let mx=innerWidth/2,my=innerHeight/2,cx=mx,cy=my;
+addEventListener('pointermove',e=>{mx=e.clientX;my=e.clientY});
+gsap.ticker.add(()=>{cx+=(mx-cx)*.16;cy+=(my-cy)*.16;cursor.style.left=cx+'px';cursor.style.top=cy+'px'});
+document.querySelectorAll('.tilt').forEach(el=>el.addEventListener('pointermove',e=>{const r=el.getBoundingClientRect();const x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;gsap.to(el,{rotateY:x*8,rotateX:-y*8,duration:.3,overwrite:true})}));
+document.querySelectorAll('.tilt').forEach(el=>el.addEventListener('pointerleave',()=>gsap.to(el,{rotateY:0,rotateX:0,duration:.5})));
+</script>
+</body>
+</html>
